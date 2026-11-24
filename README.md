@@ -29,9 +29,8 @@ This repository curates **162 real-world GitHub Issues, PRs, and engineering pos
 
 | Document | Format | Description |
 | :--- | :---: | :--- |
-| [**单算子到端到端性能鸿沟实证统计报告.md**](./单算子到端到端性能鸿沟实证统计报告.md) | Markdown | 全库 152 例有效性能案例的完整多维统计报告（`L0–L8` 占比、13 仓分布矩阵、四大软件栈画像、复合耦合对、硬件平台、年度趋势、处置状态与九层防御清单） |
-| [**单算子到端到端性能鸿沟实证统计报告.pdf**](./单算子到端到端性能鸿沟实证统计报告.pdf) | PDF (4 pages) | 含 5 组高清矢量统计图（分布图、热力矩阵、软件栈堆叠图、耦合对与硬件图、年度与状态双联图）的排版报告 |
-| [**单算子到端到端性能鸿沟实证总表 LaTeX.pdf**](./单算子到端到端性能鸿沟实证总表%20LaTeX.pdf) | PDF (LaTeX) | 早期精选双侧证据实证总表（含 21 例核心案例、4 例边界对照及 AMMO 论文反模式摘录） |
+| [**单算子到端到端性能鸿沟实证统计报告.md**](./reports/单算子到端到端性能鸿沟实证统计报告.md) | Markdown | 全库 152 例有效性能案例的完整多维统计报告（`L0–L8` 占比、13 仓分布矩阵、四大软件栈画像、复合耦合对、硬件平台、年度趋势、处置状态与九层防御清单） |
+| [**单算子到端到端性能鸿沟实证统计报告.pdf**](./reports/单算子到端到端性能鸿沟实证统计报告.pdf) | PDF (4 pages) | 含 5 组高清矢量统计图（分布图、热力矩阵、软件栈堆叠图、耦合对与硬件图、年度与状态双联图）的排版报告 |
 
 ---
 
@@ -69,19 +68,19 @@ Each `.xlsx` workbook contains **3 standardized sheets**: `案例总表` (15-col
 
 | Stack Layer | Repository | Workbook File | Total Entries | Perf Cases (`L0–L8`) | Dominant Root Causes |
 | :--- | :--- | :--- | :---: | :---: | :--- |
-| **LLM Serving Engine**<br>大模型推理引擎 | **TensorRT-LLM** | [tensorrt_llm_kernel_vs_e2e_cases_master.xlsx](./tensorrt_llm_kernel_vs_e2e_cases_master.xlsx) | 18 | 18 | `L3` (6), `L5` (4), `L2` (3) |
-| | **vllm-ascend** | [vllm_ascend_kernel_vs_e2e_cases_master.xlsx](./vllm_ascend_kernel_vs_e2e_cases_master.xlsx) | 17 | 17 | `L3` (5), `L5` (4), `L6` (3) |
-| | **vLLM** | [vllm_kernel_vs_e2e_cases_master.xlsx](./vllm_kernel_vs_e2e_cases_master.xlsx) | 16 | 16 | `L3` (4), `L1` (3), `L5` (3) |
-| | **SGLang** | [sglang_kernel_vs_e2e_cases_master.xlsx](./sglang_kernel_vs_e2e_cases_master.xlsx) | 15 | 15 | `L0` (3), `L1` (3), `L2/L3/L5/L6` (2) |
-| **Operator Library**<br>算子库 | **FlashAttention** | [flash_attention_kernel_vs_e2e_cases_master.xlsx](./flash_attention_kernel_vs_e2e_cases_master.xlsx) | 9 | 9 | `L1` (3), `L6` (3), `L4` (2) |
-| | **FlashInfer** | [flashinfer_kernel_vs_e2e_cases_master.xlsx](./flashinfer_kernel_vs_e2e_cases_master.xlsx) | 9 | 9 | `L4` (3), `L0` (2) |
-| | **FlagGems** | [flaggems_kernel_vs_e2e_cases_master.xlsx](./flaggems_kernel_vs_e2e_cases_master.xlsx) | 9 | 9 | `L1` (2), `L2` (2), `L5` (2) |
-| | **Liger-Kernel** | [liger_kernel_vs_e2e_cases_master.xlsx](./liger_kernel_vs_e2e_cases_master.xlsx) | 11 | 9 | `L4` (3), `L3` (2), `L5` (2) |
-| **Framework & Compiler**<br>推理/编译框架 | **PyTorch** | [pytorch_kernel_vs_e2e_cases_master.xlsx](./pytorch_kernel_vs_e2e_cases_master.xlsx) | 14 | 14 | `L4` (3), `L1/L3/L6` (2) |
-| | **ONNX Runtime** | [onnxruntime_kernel_vs_e2e_cases_master.xlsx](./onnxruntime_kernel_vs_e2e_cases_master.xlsx) | 10 | 10 | `L3` (6), `L1` (2), `L7` (2) |
-| | **Apache TVM** | [tvm_operator_vs_e2e_cases_master.xlsx](./tvm_operator_vs_e2e_cases_master.xlsx) | 13 | 6 | `L4` (4), `L1` (2) |
-| **Local / Edge Engine**<br>端侧/本地引擎 | **llama.cpp** | [llama_cpp_kernel_vs_e2e_cases_master.xlsx](./llama_cpp_kernel_vs_e2e_cases_master.xlsx) | 16 | 16 | `L6` (6), `L3` (3), `L1/L5/L7` (2) |
-| | **vllm-metal** | [vllm_metal_kernel_vs_e2e_cases.xlsx](./vllm_metal_kernel_vs_e2e_cases.xlsx) | 5 | 4 | `L2` (3), `L5` (1) |
+| **LLM Serving Engine**<br>大模型推理引擎 | **TensorRT-LLM** | [tensorrt_llm_kernel_vs_e2e_cases_master.xlsx](./cases/tensorrt_llm_kernel_vs_e2e_cases_master.xlsx) | 18 | 18 | `L3` (6), `L5` (4), `L2` (3) |
+| | **vllm-ascend** | [vllm_ascend_kernel_vs_e2e_cases_master.xlsx](./cases/vllm_ascend_kernel_vs_e2e_cases_master.xlsx) | 17 | 17 | `L3` (5), `L5` (4), `L6` (3) |
+| | **vLLM** | [vllm_kernel_vs_e2e_cases_master.xlsx](./cases/vllm_kernel_vs_e2e_cases_master.xlsx) | 16 | 16 | `L3` (4), `L1` (3), `L5` (3) |
+| | **SGLang** | [sglang_kernel_vs_e2e_cases_master.xlsx](./cases/sglang_kernel_vs_e2e_cases_master.xlsx) | 15 | 15 | `L0` (3), `L1` (3), `L2/L3/L5/L6` (2) |
+| **Operator Library**<br>算子库 | **FlashAttention** | [flash_attention_kernel_vs_e2e_cases_master.xlsx](./cases/flash_attention_kernel_vs_e2e_cases_master.xlsx) | 9 | 9 | `L1` (3), `L6` (3), `L4` (2) |
+| | **FlashInfer** | [flashinfer_kernel_vs_e2e_cases_master.xlsx](./cases/flashinfer_kernel_vs_e2e_cases_master.xlsx) | 9 | 9 | `L4` (3), `L0` (2) |
+| | **FlagGems** | [flaggems_kernel_vs_e2e_cases_master.xlsx](./cases/flaggems_kernel_vs_e2e_cases_master.xlsx) | 9 | 9 | `L1` (2), `L2` (2), `L5` (2) |
+| | **Liger-Kernel** | [liger_kernel_vs_e2e_cases_master.xlsx](./cases/liger_kernel_vs_e2e_cases_master.xlsx) | 11 | 9 | `L4` (3), `L3` (2), `L5` (2) |
+| **Framework & Compiler**<br>推理/编译框架 | **PyTorch** | [pytorch_kernel_vs_e2e_cases_master.xlsx](./cases/pytorch_kernel_vs_e2e_cases_master.xlsx) | 14 | 14 | `L4` (3), `L1/L3/L6` (2) |
+| | **ONNX Runtime** | [onnxruntime_kernel_vs_e2e_cases_master.xlsx](./cases/onnxruntime_kernel_vs_e2e_cases_master.xlsx) | 10 | 10 | `L3` (6), `L1` (2), `L7` (2) |
+| | **Apache TVM** | [tvm_operator_vs_e2e_cases_master.xlsx](./cases/tvm_operator_vs_e2e_cases_master.xlsx) | 13 | 6 | `L4` (4), `L1` (2) |
+| **Local / Edge Engine**<br>端侧/本地引擎 | **llama.cpp** | [llama_cpp_kernel_vs_e2e_cases_master.xlsx](./cases/llama_cpp_kernel_vs_e2e_cases_master.xlsx) | 16 | 16 | `L6` (6), `L3` (3), `L1/L5/L7` (2) |
+| | **vllm-metal** | [vllm_metal_kernel_vs_e2e_cases.xlsx](./cases/vllm_metal_kernel_vs_e2e_cases.xlsx) | 5 | 4 | `L2` (3), `L5` (1) |
 
 ---
 
